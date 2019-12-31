@@ -7,7 +7,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
-class SignUp extends Component {
+class Login extends Component {
 
 
 
@@ -28,7 +28,7 @@ class SignUp extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1>Please Submit Your Information</h1>
+              <h1>Please Enter Your Login Information</h1>
             </Jumbotron>
             <form>
               <Input class="text-center"
@@ -43,7 +43,7 @@ class SignUp extends Component {
                // disabled={!(this.state.author && this.state.title)}
                 //onClick={this.handleFormSubmit}
               >
-                Signup
+                Login
               </FormBtn>
             </form>
           </Col>
@@ -53,4 +53,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default Login;
