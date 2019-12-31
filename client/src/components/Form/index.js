@@ -25,3 +25,20 @@ export function FormBtn(props) {
     </button>
   );
 }
+
+// Sign up Form & Button
+export function SignUpInput(props) {
+  return (
+    <div className="form-group">
+      <input className="form-control" {...props} />
+    </div>
+  );
+}
+
+export function SignUpBtn(props) {
+  return (
+    <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
+      {props.children}
+    </button>
+  );
+}
