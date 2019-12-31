@@ -11,7 +11,7 @@ function Nav() {
           <a class="nav-link text-white" href="/signup">SIGN UP</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="">LOGIN</a>
+          <a class="nav-link text-white" href="/login">LOGIN</a>
         </li>
       </ul>
     </nav>
