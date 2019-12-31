@@ -8,10 +8,10 @@ function Nav() {
       </a>
       <ul class="nav justify-content-right">
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">SIGN UP</a>
+          <a class="nav-link text-white" href="/signup">SIGN UP</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="../../public/login.html">LOGIN</a>
+          <a class="nav-link text-white" href="">LOGIN</a>
         </li>
       </ul>
     </nav>
