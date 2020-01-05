@@ -5,7 +5,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { SignupInput, TextArea, SignUpBtn } from "../components/Form";
 
 class SignUp extends Component {
 
@@ -30,21 +30,29 @@ class SignUp extends Component {
             <Jumbotron>
               <h1>Please Submit Your Information</h1>
             </Jumbotron>
+          </Col>
+        </Row>
+        <Row>
+          <Col size="md-7">
+            <h1>Cool Image Can Go Here</h1>
+          </Col>
+          <Col size="md-5">
             <form>
-              <Input class="text-center"
+              <h3 class="text-left pb-2">Sign Up Here:</h3>
+              <SignupInput class="text-left col-10"
                 name="email"
                 placeholder="Email (required)"
               />
-              <Input class="text-center"
+              <SignupInput class="text-left col-10"
                 name="password"
                 placeholder="Password (required)"
               />
-              <FormBtn
+              <SignUpBtn class=""
                // disabled={!(this.state.author && this.state.title)}
-                //onClick={this.handleFormSubmit}
+                onClick={this.handleFormSubmit}
               >
                 Signup
-              </FormBtn>
+              </SignUpBtn>
             </form>
           </Col>
         </Row>
