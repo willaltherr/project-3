@@ -11,7 +11,6 @@ const users = require("./routes/api/users");
 
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3001;
 
 // Bodyparser middleware
 app.use(
@@ -23,20 +22,6 @@ app.use(bodyParser.json());
 
 // DB Config
 const db = require("./Config/keys").mongoURI;
-
-// Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-// Add routes, both API and view
-app.use(routes);
-
-// Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
 
 // // Connect to MongoDB
 mongoose
@@ -53,6 +38,25 @@ app.use(passport.initialize());
 require("./Config/passport")(passport);
 // Routes
 app.use("/api/users", users);
+
+
+
+// Define middleware here
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+// Add routes, both API and view
+app.use(routes);
+
+// Connect to the Mongo DB
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+
+const PORT = process.env.PORT || 3000;
+
 
 // Start the API server
 app.listen(PORT, function() {
