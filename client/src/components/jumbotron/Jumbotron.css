@@ -1,9 +1,16 @@
 .jumbotron {
-    border: 2px;
-    border-style: solid;
-    border-color: gold;
-    text-align: center;
-    width: 100%;
-    min-height: 300px;
-  }
+  border: 2px;
+  border-style: solid;
+  border-color: white;
+  text-align: center;
+  width:1250px;
+  min-height: 300px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-image: url(https://media.giphy.com/media/3ohzdYnPyEiKF74r3G/giphy.gif);
+  background-size: cover;
+}
   
