@@ -1,0 +1,12 @@
+.jumbotron {
+    border: 2px;
+    border-style: solid;
+    border-color: gold;
+    text-align: center;
+    width: 1000px;
+    min-height: 300px;
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
