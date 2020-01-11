@@ -1,0 +1,10 @@
+.nav-wrapper {
+  background-color: #151D2E;
+}
+nav .brand-logo {
+  color: #FBB92C;
+}
+.btn, .btn-large {
+  background-color: #FBB92C;
+  color: #151D2E;
+}
