@@ -7,10 +7,12 @@
   min-height: 300px;
   margin-left: 0px;
   margin-right: 0px;
-  padding-top: 100px;
   padding-left: 20px;
   padding-right: 20px;
   background-image: url(https://media.giphy.com/media/3ohzdYnPyEiKF74r3G/giphy.gif);
   background-size: cover;
 }
-  
+
+.mt-0 {
+  margin-top: 0 !important;
+}

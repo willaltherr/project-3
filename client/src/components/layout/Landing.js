@@ -6,7 +6,7 @@ import Jumbotron from "../jumbotron/Jumbotron";
 class Landing extends Component {
   render() {
     return (
-      <div style={{ height: "75vh"}} className="container valign-wrapper">
+      <div style={{ height: "75vh"}} className="container valign-wrapper mt-0">
           <div className="JumboDiv"></div>
             <br />
            <Jumbotron>
