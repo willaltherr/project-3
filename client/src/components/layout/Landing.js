@@ -6,15 +6,13 @@ import Jumbotron from "../jumbotron/Jumbotron";
 class Landing extends Component {
   render() {
     return (
-      <div style={{ height: "75vh", width: "100vw" }} className="container valign-wrapper">
-        <div className="row">
+      <div style={{ height: "75vh"}} className="container valign-wrapper">
           <div className="JumboDiv"></div>
             <br />
            <Jumbotron>
-        
+          <img src ="https://media.giphy.com/media/3ohzdYnPyEiKF74r3G/giphy.gif" alt="balls"></img>
            </Jumbotron>
-          
-        </div>
+  
       </div>
     );
   }
