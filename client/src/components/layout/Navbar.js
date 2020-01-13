@@ -15,7 +15,6 @@ class Navbar extends Component {
               }}
               className="col s5 brand-logo center"
             >
-              <i className="material-icons">code</i>
               Local-Lotto
             </Link>
             <Link
