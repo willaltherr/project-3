@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import FormContainer from "../containers/FormContainer";
+
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -13,16 +15,18 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
 
     return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
+      <div style={{ height: "100%", width: "100%"}} className="container valign-wrapper">
         <div className="row">
           <div className="landing-copy col s12 center-align">
-            <h4>
-              <b>Hey there,</b> {user.name.split(" ")[0]}
+            <h2>
+              <b>Play to win here, {user.name.split(" ")[0]}!</b> 
               <p className="flow-text grey-text text-darken-1">
-                You are logged into a full-stack{" "}
-                <span style={{ fontFamily: "monospace" }}>MERN</span> app 👏
+                You now have better options to win by joining or creating your own local group.
               </p>
-            </h4>
+            </h2>
+            <h4>Create a Group</h4>
+            <FormContainer />
+            <h4>Join a Group</h4>
             <button
               style={{
                 width: "150px",
