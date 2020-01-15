@@ -1,6 +1,6 @@
 .jumbotron {
   text-align: center;
-  width:1250px;
+  width:100%;
   min-height: 300px;
   margin-left: 0px;
   margin-right: 0px;
@@ -8,6 +8,22 @@
   background-size: cover;
 }
 
+<<<<<<< HEAD
+.container .valign-width .s12{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+  width: 100% !important;
+}
+
+.col{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+  
+=======
 .mt-0 {
   margin-top: 0 !important;
 }
+>>>>>>> b624f41a4363e0974cb5248eb35e8d998298b7c1

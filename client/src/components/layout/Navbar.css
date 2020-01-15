@@ -8,4 +8,16 @@ nav .brand-logo {
 .btn, .btn-large {
   background-color: #FBB92C;
   color: #151D2E;
+  height: 25px;
+  font-size: 8px;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Bungee Inline', cursive;
+  font-weight: 400;
+}
+
+img {
+  height:57px;
 }
