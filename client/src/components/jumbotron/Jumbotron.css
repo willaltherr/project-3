@@ -8,6 +8,7 @@
   background-size: cover;
 }
 
+<<<<<<< HEAD
 .container .valign-width .s12{
   padding-left: 0px !important;
   padding-right: 0px !important;
@@ -21,3 +22,8 @@
   padding-left: 0px;
 }
   
+=======
+.mt-0 {
+  margin-top: 0 !important;
+}
+>>>>>>> b624f41a4363e0974cb5248eb35e8d998298b7c1
