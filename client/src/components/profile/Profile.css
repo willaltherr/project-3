@@ -1,0 +1,45 @@
+.row2 {
+   width: 100%;
+}
+
+.row {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 40px;
+}
+
+.container {
+    background-color: #a8a7a7;
+    margin: 0px;
+}
+input{
+    align-content: center;
+    text-align: center;
+}
+
+.container-everything {
+    background-color: lightpink;
+
+}
+
+h5 {
+    width: 100px;
+}
+
+.middleLine {
+    border: 10px;
+    border-style: solid;
+    border-color: black;
+    height: 10000px;
+    width: 1px;
+    float: right;
+}
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+}
+/*.imageholder {
+ max-height: 100px;
+ max-width: 100px;
+}*/
