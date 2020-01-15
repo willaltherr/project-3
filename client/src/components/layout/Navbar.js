@@ -15,13 +15,13 @@ class Navbar extends Component {
               }}
               className="col s5 brand-logo center"
             >
-              <i className="material-icons">code</i>
-              Local-Lotto
+              <img src="https://files.slack.com/files-pri/TLHKR9MUG-FS9U62QRY/local_lotto.jpg"></img>
             </Link>
             <Link
                 to="/login"
                 style={{
-                  width: "140px",
+                  marginLeft:"10px",
+                  width: "90px",
                   borderRadius: "3px",
                   letterSpacing: "1.5px"
                 }}
@@ -29,10 +29,12 @@ class Navbar extends Component {
               >
                 Log In
               </Link>
+           
               <Link
                 to="/register"
                 style={{
-                  width: "140px",
+                  marginLeft: "15px",
+                  width: "90px",
                   borderRadius: "3px",
                   letterSpacing: "1.5px"
                 }}

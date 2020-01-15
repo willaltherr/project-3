@@ -1,10 +1,23 @@
 .jumbotron {
   text-align: center;
-  width:1250px;
+  width:100%;
   min-height: 300px;
   margin-left: 0px;
   margin-right: 0px;
   background-image: url(https://media.giphy.com/media/3ohzdYnPyEiKF74r3G/giphy.gif);
   background-size: cover;
+}
+
+.container .valign-width .s12{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+  width: 100% !important;
+}
+
+.col{
+  padding-right: 0px;
+  padding-left: 0px;
 }
   
