@@ -15,6 +15,7 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Profile from "./components/profile/Profile";
 import Footer from "./components/layout/Footer";
+import Steps from "./components/layout/Steps";
 
 import "./App.css";
 

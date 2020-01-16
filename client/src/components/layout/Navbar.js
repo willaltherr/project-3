@@ -15,11 +15,7 @@ class Navbar extends Component {
               }}
               className="col s5 brand-logo center"
             >
-<<<<<<< HEAD
               <img src="https://files.slack.com/files-pri/TLHKR9MUG-FS9U62QRY/local_lotto.jpg"></img>
-=======
-              Local-Lotto
->>>>>>> b624f41a4363e0974cb5248eb35e8d998298b7c1
             </Link>
             <Link
                 to="/login"
