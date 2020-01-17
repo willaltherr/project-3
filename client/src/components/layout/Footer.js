@@ -30,7 +30,7 @@ function Footer({ children }) {
             
             <div style={style}>
                 { children }
-                <img className="footer-logo" src="https://files.slack.com/files-pri/TLHKR9MUG-FS9U62QRY/local_lotto.jpg"></img>
+                <img className="footer-logo" src="/images/logo.jpg"></img>
             </div>
         </div>
     )

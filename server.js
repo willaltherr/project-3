@@ -6,6 +6,10 @@ const passport = require("passport");
 const users = require("./routes/api/users");
 
 const app = express();
+//static images
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/public"));
+}
 
 // Bodyparser middleware
 app.use(
