@@ -15,17 +15,17 @@ class FormContainer extends Component {
         name: "",
         age: "",
         dollar: "",
+        time: "",
         gender: "",
-        skills: [],
         about: ""
       },
 
       genderOptions: ["Private", "Public"],
-      skillOptions: ["Programming", "Development", "Design", "Testing"]
     };
     this.handleTextArea = this.handleTextArea.bind(this);
     this.handleAge = this.handleAge.bind(this);
     this.handleDollar = this.handleDollar.bind(this);
+    this.handleTime = this.handleTime.bind(this);
     this.handleFullName = this.handleFullName.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleClearForm = this.handleClearForm.bind(this);
@@ -68,6 +68,19 @@ class FormContainer extends Component {
         newUser: {
           ...prevState.newUser,
           dollar: value
+        }
+      }),
+      () => console.log(this.state.newUser)
+    );
+  }
+
+  handleTime(e) {
+    let value = e.target.value;
+    this.setState(
+      prevState => ({
+        newUser: {
+          ...prevState.newUser,
+          time: value
         }
       }),
       () => console.log(this.state.newUser)
@@ -144,6 +157,7 @@ class FormContainer extends Component {
         name: "",
         age: "",
         dollar: "",
+        time: "",
         gender: "",
         skills: [],
         about: ""
@@ -180,7 +194,16 @@ class FormContainer extends Component {
           placeholder={"Enter maximum dollar amount for winner"}
           handlechange={this.handleDollar}
         />{" "}
-        {/* Age */}
+        {/* Pick Date */}
+        <Input
+          inputtype={"date"}
+          name={"time"}
+          title={"Pick Drawing Date"}
+          value={this.state.newUser.time}
+          placeholder={"Pick the date you want the drawing to occur"}
+          handlechange={this.handleTime}
+        />{" "}
+        {/* Selection */}
         <Select
           title={"Private or Public"}
           name={"gender"}
