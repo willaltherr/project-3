@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import API from "../../utils/api";
+
 
 /* Import Components */
 import Input from "../Input";
@@ -12,6 +14,7 @@ class FormContainer extends Component {
 
     this.state = {
       newUser: {
+        games: [],
         name: "",
         age: "",
         dollar: "",
@@ -27,13 +30,47 @@ class FormContainer extends Component {
     this.handleDollar = this.handleDollar.bind(this);
     this.handleTime = this.handleTime.bind(this);
     this.handleFullName = this.handleFullName.bind(this);
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    // this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleClearForm = this.handleClearForm.bind(this);
     this.handleCheckBox = this.handleCheckBox.bind(this);
     this.handleInput = this.handleInput.bind(this);
   }
 
   /* This lifecycle hook gets executed when the component mounts */
+
+  componentDidMount() {
+    this.loadGames();
+  }
+  loadGames = () => {
+    API.getGames()
+      .then(res =>
+        this.setState({ games: res.data, name: "", age: "", dollar: "", time: "", gender: "", about: "" })
+      )
+      .catch(err => console.log(err));
+  };
+  
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.title && this.state.author) {
+      API.saveGame({
+        name: this.state.name,
+        age: this.state.age,
+        dollar: this.state.dollar,
+        time: this.state.time,
+        gender: this.state.gender,
+        about: this.state.about,
+      })
+        .then(res => this.loadGames())
+        .catch(err => console.log(err));
+    }
+  };
 
   handleFullName(e) {
     let value = e.target.value;
@@ -132,23 +169,23 @@ class FormContainer extends Component {
     }));
   }
 
-  handleFormSubmit(e) {
-    e.preventDefault();
-    let userData = this.state.newUser;
+  // handleFormSubmit(e) {
+  //   e.preventDefault();
+  //   let userData = this.state.newUser;
 
-    fetch("http://example.com", {
-      method: "POST",
-      body: JSON.stringify(userData),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      }
-    }).then(response => {
-      response.json().then(data => {
-        console.log("Successful" + data);
-      });
-    });
-  }
+  //   fetch("http://example.com", {
+  //     method: "POST",
+  //     body: JSON.stringify(userData),
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json"
+  //     }
+  //   }).then(response => {
+  //     response.json().then(data => {
+  //       console.log("Successful" + data);
+  //     });
+  //   });
+  // }
 
   handleClearForm(e) {
     e.preventDefault();
@@ -209,8 +246,8 @@ class FormContainer extends Component {
           name={"gender"}
           options={this.state.genderOptions}
           value={this.state.newUser.gender}
-          placeholder={"Select Group Type"}
           handlechange={this.handleInput}
+          placeholder={"Select Group Type"}
         />{" "}
         {/* About */}
         <TextArea
@@ -223,7 +260,8 @@ class FormContainer extends Component {
         />
         {/* About you */}
         <Button
-          action={this.handleFormSubmit}
+          disabled={!(this.state.name && this.state.age && this.state.dollar && this.state.time && this.state.gender)}
+          onClick={this.handleFormSubmit}
           type={"primary"}
           title={"Create group"}
           style={buttonStyle}
