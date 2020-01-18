@@ -1,0 +1,17 @@
+.container.valign-wrapper {
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    margin-top: 10px;
+}
+
+.profileGraph {
+    border: 2px;
+    border-style: solid;
+    border-color: gold;
+    margin-top: 10px;
+}
+
+.buttonDiv {
+    align-content: center;
+}

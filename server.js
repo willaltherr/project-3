@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const multer = require('multer');
+const cors = require('cors');
 
 const users = require("./routes/api/users");
 
@@ -10,6 +12,29 @@ const app = express();
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/public"));
 }
+
+//Image Uploader
+var storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+  cb(null, 'public/images/uploads')
+  },
+  filename: (req, file, cb) => {
+  cb(null, Date.now() + '-' + file.originalname)
+  }
+  });
+  const upload = multer({ storage })
+   
+  app.use(cors());
+   
+  app.post('/upload', upload.single('image'), (req, res) => {
+  if (req.file)
+  res.json({
+  imageUrl: `images/uploads/${req.file.filename}`
+  });
+  else 
+  res.status("409").json("No Files to Upload.");
+  });
+//Image Uploader END
 
 // Bodyparser middleware
 app.use(
