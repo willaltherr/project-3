@@ -27,6 +27,7 @@ class Dashboard extends Component {
             <h4>Create a Group</h4>
             <FormContainer />
             <h4>Join a Group</h4>
+            <div></div>
             <button
               style={{
                 width: "150px",
