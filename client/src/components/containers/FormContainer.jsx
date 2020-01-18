@@ -19,7 +19,7 @@ class FormContainer extends Component {
         age: "",
         dollar: "",
         time: "",
-        gender: "",
+        gender: "Public",
         about: ""
       },
 
@@ -43,9 +43,10 @@ class FormContainer extends Component {
   }
   loadGames = () => {
     API.getGames()
-      .then(res =>
+      .then(res =>{
+        console.log('res', res)
         this.setState({ games: res.data, name: "", age: "", dollar: "", time: "", gender: "", about: "" })
-      )
+      })
       .catch(err => console.log(err));
   };
   
@@ -58,7 +59,8 @@ class FormContainer extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
+    let keys = Object.keys(this.state.newUser);
+    if (keys.every(item=> this.state.newUser[item])) {
       API.saveGame({
         name: this.state.name,
         age: this.state.age,
@@ -67,7 +69,11 @@ class FormContainer extends Component {
         gender: this.state.gender,
         about: this.state.about,
       })
-        .then(res => this.loadGames())
+        .then(res => {
+          console.log('We did the thing');
+          console.log(res)
+          this.loadGames();
+        })
         .catch(err => console.log(err));
     }
   };
@@ -203,6 +209,7 @@ class FormContainer extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <form className="container-fluid" onSubmit={this.handleFormSubmit}>
         <Input
