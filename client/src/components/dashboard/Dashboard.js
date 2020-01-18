@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import FormContainer from "../containers/FormContainer";
-
+import "./dashboard.css";
+import AccordionButton from "./accordian";
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -15,19 +16,21 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
 
     return (
+      <div className = "dash-container">
+
       <div style={{ height: "100%", width: "100%"}} className="container valign-wrapper">
         <div className="row">
-          <div className="landing-copy col s12 center-align">
+          <div className="form center-align">
             <h2>
-              <b>Play to win here, {user.name.split(" ")[0]}!</b> 
-              <p className="flow-text grey-text text-darken-1">
-                You now have better options to win by joining or creating your own local group.
+              <b>Play here to win, {user.name.split(" ")[0]}!</b> 
+              <p className="flow-text">
+                Join an existing group, or invite your friends and create your own group!
               </p>
             </h2>
-            <h4>Create a Group</h4>
-            <FormContainer />
-            <h4>Join a Group</h4>
-            <div></div>
+            <p>
+              <AccordionButton />
+            </p>
+
             <button
               style={{
                 width: "150px",
@@ -42,6 +45,7 @@ class Dashboard extends Component {
             </button>
           </div>
         </div>
+      </div>
       </div>
     );
   }
