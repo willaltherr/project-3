@@ -1,11 +1,11 @@
 .jumbotron {
-  text-align: center;
   width:100%;
   min-height: 300px;
   margin-left: 0px;
   margin-right: 0px;
   background-image: url(https://media.giphy.com/media/3ohzdYnPyEiKF74r3G/giphy.gif);
   background-size: cover;
+  height: 565px;
 }
 
 .container .valign-width .s12{
@@ -20,3 +20,42 @@
   padding-right: 0px;
   padding-left: 0px;
 }
+
+.slogan {
+
+  margin-left: 35px;
+  color: white;
+  text-align: center;
+  font-family: monospace;
+}
+
+.slogan-words {
+  width: 66%;
+  margin-left: 35px;
+  color: white;
+  text-align: center;
+  font-size: 35px;
+}
+
+h1 {
+  font-size: 45px;
+  font-family: 'Abril Fatface', cursive;
+}
+
+h3{
+  font-family: 'Vidaloka', serif;
+}
+
+button {
+  margin-left: 15px;
+  height:45px;
+  width: 175px;
+  background-color: #FBB92C;
+  color: #151D2E;
+  opacity: .85;
+}
+
+.jumbotron-button {
+  text-align: center;
+}
+
