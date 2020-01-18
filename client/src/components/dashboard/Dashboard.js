@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import FormContainer from "../containers/FormContainer";
 import "./dashboard.css";
-import FunButton from "./accordian";
 import AccordionButton from "./accordian";
 
 class Dashboard extends Component {
