@@ -1,5 +1,6 @@
 import './custom.scss';
 import React from 'react';
+import { render } from "react-dom";
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
