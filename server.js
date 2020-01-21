@@ -27,6 +27,7 @@ var storage = multer.diskStorage({
   app.use(cors());
    
   app.post('/upload', upload.single('image'), (req, res) => {
+    console.log("made it this far")
   if (req.file)
   res.json({
   imageUrl: `images/uploads/${req.file.filename}`

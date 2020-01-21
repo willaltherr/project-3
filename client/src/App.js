@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
-import axios from 'axios';
 
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
@@ -19,8 +18,6 @@ import Footer from "./components/layout/Footer";
 import Steps from "./components/layout/Steps";
 
 import "./App.css";
-//var for image uploader
-const BASE_URL = 'http://localhost:3000/;'
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {

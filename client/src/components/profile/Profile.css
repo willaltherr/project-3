@@ -1,8 +1,14 @@
-.container.valign-wrapper {
+.container.valign-wrapper2 {
     border: 2px;
     border-style: solid;
     border-color: black;
     margin-top: 10px;
+    text-align: center;
+    padding-top: 45px;
+    font-family: 'Vidaloka', serif;
+}
+.wholeProfileDiv {
+    
 }
 
 .profileGraph {
@@ -10,8 +16,62 @@
     border-style: solid;
     border-color: gold;
     margin-top: 10px;
+    text-align: center;
+    padding-top: 45px;
+    font-family: 'Vidaloka', serif;
+}
+
+.form-control {
+    width: 100%;
+    
+   
+}
+
+.blankfornow {
+    align-content: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .buttonDiv {
+  display: flex;
+  align-content: center;
+}
+
+.btn.logout {
+    text-align: center;
     align-content: center;
 }
+
+b {
+    align-content: center;
+    text-align: center;
+}
+
+/* maybe not neccesary */
+/* .myChart {
+    width: 100%;
+    height: 100%;
+    width: 800px;
+    height: 580px;
+    /* background-color: greenyellow;
+    
+} */ 
+
+
+
+
+/* trying to resize profle photo div */
+.profilePhotoDiv{
+    width: 100%;
+    height: 100%;
+}
+
+img [alt^="profile"] {
+    width: 100%;
+    height: 100%;
+}
+
+/* img[alt*="front"] {
+    padding: .2rem
+ } */
