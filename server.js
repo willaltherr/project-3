@@ -6,6 +6,7 @@ const multer = require('multer');
 const cors = require('cors');
 
 const users = require("./routes/api/users");
+const games = require("./routes/api/games");
 
 const app = express();
 //static images
@@ -65,6 +66,7 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", users);
+app.use("/api/games", games);
 
 const port = process.env.PORT || 5000;
 

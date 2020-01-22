@@ -44,6 +44,7 @@ class AccordionButton extends Component {
           <Accordion.Collapse eventKey="1">
             <Card.Body>
               <h4>Join a Group</h4>
+              
             </Card.Body>
           </Accordion.Collapse>
         </Card>

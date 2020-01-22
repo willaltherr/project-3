@@ -7,6 +7,7 @@ import Input from "../Input";
 import TextArea from "../TextArea";
 import Select from "../Select";
 import Button from "../Button";
+import { json } from "body-parser";
 
 class FormContainer extends Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class FormContainer extends Component {
   componentDidMount() {
     this.loadGames();
   }
+  
   loadGames = () => {
     API.getGames()
       .then(res =>{
@@ -59,15 +61,17 @@ class FormContainer extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    console.log(this.state.name)
     let keys = Object.keys(this.state.newUser);
+    console.log("new user test",this.state.newUser);
     if (keys.every(item=> this.state.newUser[item])) {
       API.saveGame({
-        name: this.state.name,
-        age: this.state.age,
-        dollar: this.state.dollar,
-        time: this.state.time,
-        gender: this.state.gender,
-        about: this.state.about,
+        name: this.state.newUser.name,
+        age: this.state.newUser.age,
+        dollar: this.state.newUser.dollar,
+        time: this.state.newUser.time,
+        gender: this.state.newUser.gender,
+        about: this.state.newUser.about,
       })
         .then(res => {
           console.log('We did the thing');
@@ -209,8 +213,10 @@ class FormContainer extends Component {
   }
 
   render() {
+
     console.log(this.state)
     return (
+      <>
       <form className="container-fluid" onSubmit={this.handleFormSubmit}>
         <Input
           inputtype={"text"}
@@ -282,6 +288,8 @@ class FormContainer extends Component {
         />{" "}
         {/* Clear the form */}
       </form>
+      <p>{JSON.stringify(this.state.newUser)}</p>
+      </>
     );
   }
 }

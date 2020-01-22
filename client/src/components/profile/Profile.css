@@ -33,9 +33,10 @@
     text-align: center;
 }
 
-.buttonDiv {
+
+.LogoutDiv {
   display: flex;
-  align-content: center;
+  text-align: center;
 }
 
 .btn.logout {

@@ -26,9 +26,9 @@ class Dashboard extends Component {
                 Join an existing group, or invite your friends and create your own group!
               </p>
             </h2>
-            <p>
-              <AccordionButton style = {{position: "absolute"}} />
-            </p>
+            <div>
+              <AccordionButton />
+            </div>
 
             <button
               style={{
