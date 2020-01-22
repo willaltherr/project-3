@@ -19,7 +19,8 @@ class Landing extends Component {
 
       
             <div className = "StepsDiv">
-                <Steps>
+                <Steps id={'steps'}>
+
                 </Steps>
             </div>
 
