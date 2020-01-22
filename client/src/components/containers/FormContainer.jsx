@@ -259,7 +259,7 @@ class FormContainer extends Component {
         {/* About */}
         <TextArea
           title={"Group Details"}
-          rows={10}
+          rows={5}
           value={this.state.newUser.about}
           name={"currentPetInfo"}
           handlechange={this.handleTextArea}

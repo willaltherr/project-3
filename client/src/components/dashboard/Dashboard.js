@@ -16,19 +16,18 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
 
     return (
-      <div className = "dash-container">
+      <div style={{ height: "100vh", width: "100vw"}} className = "dash-container">
 
-      <div style={{ height: "100%", width: "100%"}} className="container valign-wrapper">
-        <div className="row">
+      <div className="container valign-wrapper">
           <div className="form center-align">
             <h2>
-              <b>Play here to win, {user.name.split(" ")[0]}!</b> 
+              <b>Get started here, {user.name.split(" ")[0]}!</b> 
               <p className="flow-text">
                 Join an existing group, or invite your friends and create your own group!
               </p>
             </h2>
             <p>
-              <AccordionButton />
+              <AccordionButton style = {{position: "absolute"}} />
             </p>
 
             <button
@@ -43,7 +42,6 @@ class Dashboard extends Component {
             >
               Logout
             </button>
-          </div>
         </div>
       </div>
       </div>
