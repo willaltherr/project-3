@@ -1,5 +1,6 @@
 import React from "react";
 import "./Jumbotron.css";
+import { Link } from "react-router-dom";
 
 function Jumbotron({ children }) {
   return (
@@ -20,12 +21,18 @@ function Jumbotron({ children }) {
         </div>
 
         <div className="jumbotron-button">
+              <Link
+              to="/#steps">
               <button variant="primary" size="lg" block>
                 Learn More
               </button>
+              </Link>
+              <Link
+              to="/login">
               <button variant="secondary" size="lg" block>
                 Play Now
               </button>
+              </Link>
         </div>
 
         <div>
