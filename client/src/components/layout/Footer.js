@@ -26,8 +26,6 @@ function Footer({ children }) {
     return (
         <div className ="footer">
             
-            <div style={phantom}/>
-            
             <div style={style}>
                 { children }
                 <img className="footer-logo" src="/images/logo.jpg"></img>
