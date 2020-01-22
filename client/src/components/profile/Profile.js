@@ -112,8 +112,8 @@ class Profile extends Component {
 
         </Row>
 
-        <Row>
-          <div style={{ display: "flex"}} className="buttonDiv">
+        <Row >
+          <div style={{ display: "flex"}} className="LogoutDiv">
             <button
               style={{
                 width: "150px",
