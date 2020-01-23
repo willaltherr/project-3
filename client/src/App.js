@@ -18,6 +18,9 @@ import Footer from "./components/layout/Footer";
 import Steps from "./components/layout/Steps";
 
 import "./App.css";
+import Axios from "axios";
+
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -59,4 +62,7 @@ class App extends Component {
     );
   }
 }
+
+
+
 export default App;
