@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/api";
+import Axios from 'axios';
 
 
 /* Import Components */
@@ -21,7 +22,8 @@ class FormContainer extends Component {
         dollar: "",
         time: "",
         gender: "Public",
-        about: ""
+        about: "",
+        posts: []
       },
 
       genderOptions: ["Private", "Public"],
@@ -36,6 +38,23 @@ class FormContainer extends Component {
     this.handleCheckBox = this.handleCheckBox.bind(this);
     this.handleInput = this.handleInput.bind(this);
   }
+
+// Get Games into Join Games
+componentDidUpdate = () => {
+  this.getGamePost();
+}
+
+getGamePost = () => {
+  Axios.get('/api')
+    .then((response) => {
+      const data = response.data;
+      this.setState({ posts: data });
+      console.log('Data has been received!');
+    })
+    .catch(() => {
+      alert('Error retrieving data!!');
+    });
+}
 
   /* This lifecycle hook gets executed when the component mounts */
 
