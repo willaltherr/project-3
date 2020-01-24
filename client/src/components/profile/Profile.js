@@ -56,6 +56,7 @@ class Profile extends Component {
     //END OF IMAGE UPLOADER FUNCTIONS
 
 
+
   render() {
     const { user } = this.props.auth;
 
@@ -69,13 +70,15 @@ class Profile extends Component {
             <h2>
               Welcome back, {user.name.split(" ")[0]}!
             </h2>
-            <div>
+            {/* <div>
               <img href="/"></img>
-            </div>
+            </div> */}
+            <br></br>
             <div style={{ height: "20vh" }} className="profilePhotoDiv">
                 <img src="https://mhcd.org/wp-content/uploads/2017/12/placeholder-man-1024x1024.png" alt="profilePicture">
                 </img>
             </div>
+            <br></br><br></br><br></br>
             <h5>Tired of your profile photo? Upload a new one!</h5>
               <input className="form-control " type="file" 
               onChange={this.selectImages} multiple/>
@@ -115,8 +118,7 @@ class Profile extends Component {
 
         </Row>
 
-        <Row >
-          <div style={{ display: "flex"}} className="LogoutDiv">
+          <div style={{}} className="LogoutDiv">
             <button
               style={{
                 width: "150px",
@@ -130,8 +132,6 @@ class Profile extends Component {
               Logout
             </button>
           </div>
-        </Row>
-
     </Container>
     );
   }
