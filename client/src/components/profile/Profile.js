@@ -8,7 +8,7 @@ import { logoutUser } from "../../actions/authActions";
 import { Col, Row, Container } from "../containers/FluidContainer"
 import "./Profile.css";
 
-const BASE_URL = "http://localhost:3000/";
+const BASE_URL = "http://localhost:5000/";
 
 class Profile extends Component {
   onLogoutClick = e => {
@@ -40,7 +40,7 @@ class Profile extends Component {
     data.append("image", image, image.name);
      
     // Make an AJAX upload request using Axios
-    return axios.post(BASE_URL + 'upload', data)
+    return axios.post('/api/upload', data)
     .then(response => {
     this.setState({
     imageUrls: [ response.data.imageUrl, ...this.state.imageUrls ]
@@ -69,6 +69,9 @@ class Profile extends Component {
             <h2>
               Welcome back, {user.name.split(" ")[0]}!
             </h2>
+            <div>
+              <img href="/"></img>
+            </div>
             <div style={{ height: "20vh" }} className="profilePhotoDiv">
                 <img src="https://mhcd.org/wp-content/uploads/2017/12/placeholder-man-1024x1024.png" alt="profilePicture">
                 </img>

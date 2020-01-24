@@ -5,21 +5,33 @@ import "./accordian.css"
 
 
 class AccordionButton extends Component {
-  constructor() {
-    super()
-    this.state = {
-      formData: {
-
-      },
-      groups: [],
-
-    }
+  state = {
+    groups:[],
+    games: []
   }
+  
+  
+  // constructor() {
+  //   super()
+  //   this.state = {
+  //     groups: [],
+  //     games: [],
+
+  //   }
+  // }
+
   componentDidMount() {
     // get request for existing groups
   }
+  
+  updateParent = (games) => {
+    this.setState({
+      games: games
+    })
+  }
 
   render() {
+    console.log("hello", this.state.games)
     return(
       <Accordion eventKey="0">
         <Card>
@@ -31,7 +43,10 @@ class AccordionButton extends Component {
           <Accordion.Collapse eventKey="0">
             <Card.Body>            
                 <h4>Create a Group</h4>
-                  <FormContainer />
+                  <FormContainer 
+                    updateParent={this.updateParent}
+                  
+                  />
             </Card.Body>
           </Accordion.Collapse>
         </Card>
@@ -44,8 +59,11 @@ class AccordionButton extends Component {
           <Accordion.Collapse eventKey="1">
             <Card.Body>
                 <div>
-                  
-                  <button>Join</button>
+                  {this.state.games.map(game => (
+                    <div> 
+                      {game.name}
+                      </div>
+                  )) }
                 </div>
             </Card.Body>
           </Accordion.Collapse>
