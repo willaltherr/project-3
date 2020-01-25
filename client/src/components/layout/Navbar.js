@@ -38,7 +38,7 @@ class Navbar extends Component {
                   borderRadius: "3px",
                   letterSpacing: "1.5px"
                 }}
-                className="btn btn-large waves-effect waves-light hoverable black-text"
+                className="btn btn-large waves-effect waves-light non-hoverable black-text"
               >
                 Register
               </Link>
