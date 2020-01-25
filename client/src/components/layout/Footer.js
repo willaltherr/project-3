@@ -15,12 +15,6 @@ var style = {
     fontFamily: "monospace",
 }
 
-var phantom = {
-  display: 'block',
-  padding: '20px',
-  height: '60px',
-  width: '100%',
-}
 
 function Footer({ children }) {
     return (

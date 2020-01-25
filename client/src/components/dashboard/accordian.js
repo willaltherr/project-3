@@ -42,7 +42,6 @@ class AccordionButton extends Component {
           </Card.Header>
           <Accordion.Collapse eventKey="0">
             <Card.Body>            
-                <h4>Create a Group</h4>
                   <FormContainer 
                     updateParent={this.updateParent}
                   
