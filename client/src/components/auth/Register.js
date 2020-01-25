@@ -55,7 +55,9 @@ class Register extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col s8 offset-s2">
+          <div className="col s8 offset-s2"
+          style={{
+            marginTop: "35px"}}>
             <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left"></i> Back to
               home
@@ -134,7 +136,7 @@ class Register extends Component {
                     marginTop: "1rem"
                   }}
                   type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                  className="btn btn-large waves-effect waves-light hoverable "
                 >
                   Sign up
                 </button>

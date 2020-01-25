@@ -14,12 +14,9 @@ var style = {
     width: "100%",
     fontFamily: "monospace",
 }
-
-
 function Footer({ children }) {
     return (
         <div className ="footer">
-            
             <div style={style}>
                 { children }
                 <img className="footer-logo" src="/images/logo.jpg"></img>

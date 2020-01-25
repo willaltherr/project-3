@@ -21,7 +21,7 @@ function Steps({ children }) {
                     <img className="step3" src="images/step3.jpg"/>
                 </p>
           </div>  
-       <br></br><br></br>
+            <br></br><br></br>
     </div>
    
   );

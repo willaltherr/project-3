@@ -11,7 +11,7 @@ function Jumbotron({ children }) {
       
         <div className="slogan" >
             <h1>The new way to play the Lotto</h1> 
-            <h3>Increase your odds, Increase your winnnings!</h3>
+            <h3>Increase your odds, Increase your winnings!</h3>
         </div>
 
         <div className="slogan" >
