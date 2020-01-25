@@ -21,12 +21,12 @@ function Jumbotron({ children }) {
         </div>
 
         <div className="jumbotron-button">
-              <Link
-              to="/#steps">
+              
+             
               <button variant="primary" size="lg" block>
-                Learn More
+                <a href="#steps">Learn More</a>
               </button>
-              </Link>
+              
               <Link
               to="/login">
               <button variant="secondary" size="lg" block>

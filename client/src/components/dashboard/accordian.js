@@ -36,7 +36,9 @@ class AccordionButton extends Component {
       <Accordion eventKey="0">
         <Card>
           <Card.Header>
-            <Accordion.Toggle as={Button} variant="link" eventKey="0">
+            <Accordion.Toggle as={Button} 
+            style={{fontFamily: "monospace"}} 
+            variant="link" eventKey="0">
               Create a Group
             </Accordion.Toggle>
           </Card.Header>
@@ -61,7 +63,7 @@ class AccordionButton extends Component {
                 <div className="gamesText">
                   <table>
                     <tr>
-                      <th>GROUP NAME</th>
+                      <th>Group Name</th>
                       <th>Jackpot</th>
                       <th className="join">Join Group</th>
                     </tr>
@@ -69,7 +71,7 @@ class AccordionButton extends Component {
                     <tr> 
                       {game.name}
                       <td>${game.dollar}</td>
-                      <td><button className="joinBtn">JOIN</button></td>
+                      <td><button className="joinBtn">Join</button></td>
                     </tr>
                   )) }
                   </table>
