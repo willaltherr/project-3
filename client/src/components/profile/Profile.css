@@ -8,7 +8,7 @@
     font-family: 'Vidaloka', serif;
 }
 .wholeProfileDiv {
-    
+
 }
 
 .profileGraph {
@@ -33,20 +33,13 @@
     text-align: center;
 }
 
-.buttonDiv {
-  display: flex;
+
+.LogoutDiv {
   align-content: center;
+  text-align: center;
+  padding-bottom: 100px;
 }
 
-.btn.logout {
-    text-align: center;
-    align-content: center;
-}
-
-b {
-    align-content: center;
-    text-align: center;
-}
 
 /* maybe not neccesary */
 /* .myChart {
@@ -62,15 +55,19 @@ b {
 
 
 /* trying to resize profle photo div */
+/* img{
+    height: 200%;
+    width: 200%;
+} */
+
+.profilePhotoDiv img:first-child {
+    height: 150px;
+    width: 150px;
+}
 .profilePhotoDiv{
-    width: 100%;
-    height: 100%;
+
 }
 
-img [alt^="profile"] {
-    width: 100%;
-    height: 100%;
-}
 
 /* img[alt*="front"] {
     padding: .2rem

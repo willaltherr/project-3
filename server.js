@@ -6,36 +6,15 @@ const multer = require('multer');
 const cors = require('cors');
 
 const users = require("./routes/api/users");
+const games = require("./routes/api/games");
+const upload = require("./routes/api/upload");
+
 
 const app = express();
-//static images
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/public"));
-}
 
-//Image Uploader
-var storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-  cb(null, 'public/images/uploads')
-  },
-  filename: (req, file, cb) => {
-  cb(null, Date.now() + '-' + file.originalname)
-  }
-  });
-  const upload = multer({ storage })
-   
-  app.use(cors());
-   
-  app.post('/upload', upload.single('image'), (req, res) => {
-    console.log("made it this far")
-  if (req.file)
-  res.json({
-  imageUrl: `images/uploads/${req.file.filename}`
-  });
-  else 
-  res.status("409").json("No Files to Upload.");
-  });
-//Image Uploader END
+
+
+
 
 // Bodyparser middleware
 app.use(
@@ -44,6 +23,15 @@ app.use(
   })
 );
 app.use(bodyParser.json());
+
+//static images
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}else {
+  app.use(express.static("public"));
+
+}
+
 
 // DB Config
 const db = process.env.MONGODB_URI || require("./config/keys").mongoURI;
@@ -63,8 +51,16 @@ app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
 
+app.use(cors());
+ 
 // Routes
 app.use("/api/users", users);
+app.use("/api/games", games);
+app.use("/api/upload", upload);
+//Image Uploader
+
+  
+//Image Uploader END
 
 const port = process.env.PORT || 5000;
 

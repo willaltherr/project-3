@@ -7,6 +7,7 @@ import Input from "../Input";
 import TextArea from "../TextArea";
 import Select from "../Select";
 import Button from "../Button";
+import { json } from "body-parser";
 
 class FormContainer extends Component {
   constructor(props) {
@@ -14,13 +15,13 @@ class FormContainer extends Component {
 
     this.state = {
       newUser: {
-        games: [],
+        // games: [],
         name: "",
         age: "",
         dollar: "",
         time: "",
         gender: "Public",
-        about: ""
+        about: "",
       },
 
       genderOptions: ["Private", "Public"],
@@ -30,26 +31,42 @@ class FormContainer extends Component {
     this.handleDollar = this.handleDollar.bind(this);
     this.handleTime = this.handleTime.bind(this);
     this.handleFullName = this.handleFullName.bind(this);
-    // this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleClearForm = this.handleClearForm.bind(this);
     this.handleCheckBox = this.handleCheckBox.bind(this);
     this.handleInput = this.handleInput.bind(this);
   }
+
 
   /* This lifecycle hook gets executed when the component mounts */
 
   componentDidMount() {
     this.loadGames();
   }
+
   loadGames = () => {
     API.getGames()
-      .then(res =>{
+      .then(res => {
         console.log('res', res)
-        this.setState({ games: res.data, name: "", age: "", dollar: "", time: "", gender: "", about: "" })
+        this.props.updateParent(res.data)
+        this.setState({ name: "", age: "", dollar: "", time: "", gender: "", about: "" })
+        // this.setState({
+        //   games: res.data,
+        //   newUser: {
+        //     games: [],
+        //     name: "",
+        //     age: "",
+        //     dollar: "",
+        //     time: "",
+        //     gender: "Public",
+        //     about: ""
+        //   },
+        // })
       })
+
       .catch(err => console.log(err));
   };
-  
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -59,15 +76,17 @@ class FormContainer extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    console.log(this.state.name)
     let keys = Object.keys(this.state.newUser);
-    if (keys.every(item=> this.state.newUser[item])) {
+    console.log("new user test", this.state.newUser);
+    if (keys.every(item => this.state.newUser[item])) {
       API.saveGame({
-        name: this.state.name,
-        age: this.state.age,
-        dollar: this.state.dollar,
-        time: this.state.time,
-        gender: this.state.gender,
-        about: this.state.about,
+        name: this.state.newUser.name,
+        age: this.state.newUser.age,
+        dollar: this.state.newUser.dollar,
+        time: this.state.newUser.time,
+        gender: this.state.newUser.gender,
+        about: this.state.newUser.about,
       })
         .then(res => {
           console.log('We did the thing');
@@ -209,79 +228,83 @@ class FormContainer extends Component {
   }
 
   render() {
+
     console.log(this.state)
     return (
-      <form className="container-fluid" onSubmit={this.handleFormSubmit}>
-        <Input
-          inputtype={"text"}
-          title={"Group Name"}
-          name={"name"}
-          value={this.state.newUser.name}
-          placeholder={"Enter your group"}
-          handlechange={this.handleInput}
-        />{" "}
-        {/* Number of Players */}
-        <Input
-          inputtype={"number"}
-          name={"age"}
-          title={"Number of Players"}
-          value={this.state.newUser.age}
-          placeholder={"Enter number of players"}
-          handlechange={this.handleAge}
-        />{" "}
-        {/* Maximum Winnings */}
-        <Input
-          inputtype={"number"}
-          name={"dollar"}
-          title={"Maximum Winning Amount"}
-          value={this.state.newUser.dollar}
-          placeholder={"Enter maximum dollar amount for winner"}
-          handlechange={this.handleDollar}
-        />{" "}
-        {/* Pick Date */}
-        <Input
-          inputtype={"date"}
-          name={"time"}
-          title={"Pick Drawing Date"}
-          value={this.state.newUser.time}
-          placeholder={"Pick the date you want the drawing to occur"}
-          handlechange={this.handleTime}
-        />{" "}
-        {/* Selection */}
-        <Select
-          title={"Private or Public"}
-          name={"gender"}
-          options={this.state.genderOptions}
-          value={this.state.newUser.gender}
-          handlechange={this.handleInput}
-          placeholder={"Select Group Type"}
-        />{" "}
-        {/* About */}
-        <TextArea
-          title={"Group Details"}
-          rows={5}
-          value={this.state.newUser.about}
-          name={"currentPetInfo"}
-          handlechange={this.handleTextArea}
-          placeholder={"Provide details about your group"}
-        />
-        {/* About you */}
-        <Button
-          disabled={!(this.state.name && this.state.age && this.state.dollar && this.state.time && this.state.gender)}
-          onClick={this.handleFormSubmit}
-          type={"primary"}
-          title={"Create group"}
-          style={buttonStyle}
-        />{" "}
-        {/*Submit */}
-        <Button
-          action={this.handleClearForm}
-          type={"secondary"}
-          title={"Clear"}
-          style={buttonStyle}
-        />{" "}
-        {/* Clear the form */}
-      </form>
+      <>
+        <form className="container-fluid" onSubmit={this.handleFormSubmit}>
+          <Input
+            inputtype={"text"}
+            title={"Group Name"}
+            name={"name"}
+            value={this.state.newUser.name}
+            placeholder={"Enter your group"}
+            handlechange={this.handleInput}
+          />{" "}
+          {/* Number of Players */}
+          <Input
+            inputtype={"number"}
+            name={"age"}
+            title={"Number of Players"}
+            value={this.state.newUser.age}
+            placeholder={"Enter number of players"}
+            handlechange={this.handleAge}
+          />{" "}
+          {/* Maximum Winnings */}
+          <Input
+            inputtype={"number"}
+            name={"dollar"}
+            title={"Maximum Winning Amount"}
+            value={this.state.newUser.dollar}
+            placeholder={"Enter maximum dollar amount for winner"}
+            handlechange={this.handleDollar}
+          />{" "}
+          {/* Pick Date */}
+          <Input
+            inputtype={"date"}
+            name={"time"}
+            title={"Pick Drawing Date"}
+            value={this.state.newUser.time}
+            placeholder={"Pick the date you want the drawing to occur"}
+            handlechange={this.handleTime}
+          />{" "}
+          {/* Selection */}
+          <Select
+            title={"Private or Public"}
+            name={"gender"}
+            options={this.state.genderOptions}
+            value={this.state.newUser.gender}
+            handlechange={this.handleInput}
+            placeholder={"Select Group Type"}
+          />{" "}
+          {/* About */}
+          <TextArea
+            title={"Group Details"}
+            rows={5}
+            value={this.state.newUser.about}
+            name={"currentPetInfo"}
+            handlechange={this.handleTextArea}
+            placeholder={"Provide details about your group"}
+          />
+          {/* About you */}
+          <Button
+            disabled={!(this.state.name && this.state.age && this.state.dollar && this.state.time && this.state.gender)}
+            onClick={this.handleFormSubmit}
+            type={"primary"}
+            title={"Create group"}
+            style={buttonStyle}
+          />{" "}
+          {/*Submit */}
+          <Button
+            action={this.handleClearForm}
+            type={"secondary"}
+            title={"Clear"}
+            style={buttonStyle}
+          />{" "}
+          {/* Clear the form */}
+        </form>
+        <p>{JSON.stringify(this.state.newUser)}</p>
+      </>
     );
   }
 }
