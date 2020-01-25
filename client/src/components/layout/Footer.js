@@ -13,6 +13,7 @@ var style = {
     height: "60px",
     width: "100%",
     fontFamily: "monospace",
+    zIndex: 10,
 }
 function Footer({ children }) {
     return (

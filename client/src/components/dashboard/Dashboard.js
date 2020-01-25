@@ -35,13 +35,15 @@ class Dashboard extends Component {
                 width: "150px",
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
-                marginTop: "1rem"
+                marginTop: "1rem",
+                fontFamily: "monospace",
               }}
               onClick={this.onLogoutClick}
-              className="waves-effect waves-light hoverable"
+              className="waves-effect waves-light hoverable logout"
             >
               Logout
             </button>
+            <br></br><br></br><br></br><br></br>
         </div>
       </div>
       </div>
