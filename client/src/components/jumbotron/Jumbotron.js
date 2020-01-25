@@ -24,7 +24,7 @@ function Jumbotron({ children }) {
               
              
               <button variant="primary" size="lg" block>
-                <a href="#steps">Learn More</a>
+                <a href="#steps" style={{color: "#151D2E"}}>Learn More</a>
               </button>
               
               <Link
