@@ -29,7 +29,7 @@ class Graph extends Component {
             <div style={{position: "relative", width: "100%", height: "100%",
              textAlign: "center", paddingTop: "45px" }}>
                 {/* <h2>Total Earnings for </h2> */}
-                <Line
+                <Bar
                     options={{
                         responsive:true,
                         legend: {
