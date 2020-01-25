@@ -59,11 +59,16 @@ class AccordionButton extends Component {
           <Accordion.Collapse eventKey="1">
             <Card.Body>
                 <div className="gamesText">
+                  <table>
+                    <tr>
+                      <th>GROUP NAME</th>
+                    </tr>
                   {this.state.games.map(game => (
-                    <div> 
+                    <tr> 
                       {game.name}
-                      </div>
+                      </tr>
                   )) }
+                  </table>
                 </div>
             </Card.Body>
           </Accordion.Collapse>

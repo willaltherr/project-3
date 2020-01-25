@@ -14,18 +14,9 @@ var style = {
     width: "100%",
     fontFamily: "monospace",
 }
-
-var phantom = {
-  display: 'block',
-  padding: '20px',
-  height: '60px',
-  width: '100%',
-}
-
 function Footer({ children }) {
     return (
         <div className ="footer">
-            <div style={phantom}></div>
             <div style={style}>
                 { children }
                 <img className="footer-logo" src="/images/logo.jpg"></img>
