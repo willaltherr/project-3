@@ -19,6 +19,7 @@ class FormContainer extends Component {
         name: "",
         age: "",
         dollar: "",
+        cost: "",
         time: "",
         gender: "Public",
         about: "",
@@ -29,6 +30,7 @@ class FormContainer extends Component {
     this.handleTextArea = this.handleTextArea.bind(this);
     this.handleAge = this.handleAge.bind(this);
     this.handleDollar = this.handleDollar.bind(this);
+    this.handleCost = this.handleCost.bind(this);
     this.handleTime = this.handleTime.bind(this);
     this.handleFullName = this.handleFullName.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -49,7 +51,7 @@ class FormContainer extends Component {
       .then(res => {
         console.log('res', res)
         this.props.updateParent(res.data)
-        this.setState({ name: "", age: "", dollar: "", time: "", gender: "", about: "" })
+        this.setState({ name: "", age: "", dollar: "", cost: "", time: "", gender: "", about: "" })
         // this.setState({
         //   games: res.data,
         //   newUser: {
@@ -84,6 +86,7 @@ class FormContainer extends Component {
         name: this.state.newUser.name,
         age: this.state.newUser.age,
         dollar: this.state.newUser.dollar,
+        cost: this.state.newUser.cost,
         time: this.state.newUser.time,
         gender: this.state.newUser.gender,
         about: this.state.newUser.about,
@@ -130,6 +133,19 @@ class FormContainer extends Component {
         newUser: {
           ...prevState.newUser,
           dollar: value
+        }
+      }),
+      () => console.log(this.state.newUser)
+    );
+  }
+
+  handleCost(e) {
+    let value = e.target.value;
+    this.setState(
+      prevState => ({
+        newUser: {
+          ...prevState.newUser,
+          cost: value
         }
       }),
       () => console.log(this.state.newUser)
@@ -219,6 +235,7 @@ class FormContainer extends Component {
         name: "",
         age: "",
         dollar: "",
+        cost: "",
         time: "",
         gender: "",
         skills: [],
@@ -258,6 +275,15 @@ class FormContainer extends Component {
             value={this.state.newUser.dollar}
             placeholder={"Enter maximum dollar amount for winner"}
             handlechange={this.handleDollar}
+          />{" "}
+          {/* Buy-In Cost */}
+          <Input
+            inputtype={"number"}
+            name={"cost"}
+            title={"Buy-In Cost"}
+            value={this.state.newUser.cost}
+            placeholder={"Enter the cost to play"}
+            handlechange={this.handleCost}
           />{" "}
           {/* Pick Date */}
           <Input
