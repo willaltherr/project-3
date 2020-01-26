@@ -23,13 +23,13 @@ function Jumbotron({ children }) {
         <div className="jumbotron-button">
               
              
-              <button variant="primary" size="lg" block>
+              <button variant="primary" size="lg">
                 <a href="#steps" style={{color: "#151D2E"}}>Learn More</a>
               </button>
               
               <Link
               to="/login">
-              <button variant="secondary" size="lg" block>
+              <button variant="secondary" size="lg">
                 Play Now
               </button>
               </Link>
