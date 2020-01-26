@@ -8,6 +8,8 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 import Navbar from "./components/layout/Navbar";
+// import Navbar2 from "./components/layout/Navbar2";
+
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";

@@ -62,12 +62,13 @@ class AccordionButton extends Component {
                     <tr>
                       <th>GROUP NAME</th>
                       <th>Jackpot</th>
+                      <th>Buy-In Amount</th>
                       <th className="join">Join Group</th>
                     </tr>
                   {this.state.games.map(game => (
                     <tr> 
                       {game.name}
-                      <td>${game.dollar}</td>
+                      <td>$ {game.dollar}</td>
                       <td><button className="joinBtn">JOIN</button></td>
                     </tr>
                   )) }

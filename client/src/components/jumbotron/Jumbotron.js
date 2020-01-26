@@ -27,6 +27,8 @@ function Jumbotron({ children }) {
                 Learn More
               </button>
               </Link>
+              <br></br>
+              <br></br>
               <Link
               to="/login">
               <button variant="secondary" size="lg" block>

@@ -1,10 +1,28 @@
 .nav-wrapper {
   margin-bottom: 0px;
+  max-height:100% ;
   background-color: #151D2E;
 }
+
+
+button {
+height: auto;
+}
+
+nav img{
+  height: 5vh;
+  width: auto;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
 nav .brand-logo {
   color: #FBB92C;
 }
+
 .btn, .btn-large {
   background-color: #FBB92C;
   color: #151D2E;
@@ -12,7 +30,13 @@ nav .brand-logo {
   font-size: 8px;
   text-align: center;
 }
-
+.btn-sm {
+  background-color: #FBB92C;
+  padding-bottom: 30px;
+  height: 25px;
+  font-size: 8px;
+  text-align: center;
+}
 
 img {
   height:57px;
