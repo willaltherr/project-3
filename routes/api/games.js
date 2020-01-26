@@ -2,6 +2,8 @@ const router = require("express").Router();
 const gameController = require("../../controllers/gameController");
 // Matches with "/api/games"
 
+router.route("/users")
+  .get(gameController.getUsers)
 
 router.route("/")
   .get(gameController.findAll)

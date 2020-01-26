@@ -28,6 +28,8 @@ class AccordionButton extends Component {
     this.setState({
       games: games
     })
+
+    console.log('games: ', this.state.games);
   }
 
   render() {
@@ -71,7 +73,7 @@ class AccordionButton extends Component {
                     <tr> 
                       {game.name}
                       <td>${game.dollar}</td>
-                      <td><button className="joinBtn">Join</button></td>
+                      <td><a href={`/gamelist/${game._id}`}><button className="joinBtn">Join</button></a></td>
                     </tr>
                   )) }
                   </table>
