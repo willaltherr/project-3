@@ -23,6 +23,7 @@ function Steps({ children }) {
           </div>  
             <br></br><br></br>
     </div>
+   
   );
 }
 

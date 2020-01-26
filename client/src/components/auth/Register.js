@@ -82,7 +82,7 @@ class Register extends Component {
                     invalid: errors.name
                   })}
                 />
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">First & Last Name</label>
                 <span className="red-text">{errors.name}</span>
               </div>
               <div className="input-field col s12">

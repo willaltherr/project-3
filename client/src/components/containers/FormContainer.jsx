@@ -271,7 +271,7 @@ class FormContainer extends Component {
           <Input
             inputtype={"number"}
             name={"dollar"}
-            title={"Maximum Winning Amount"}
+            title={"Maximum Winning Amount (USD)"}
             value={this.state.newUser.dollar}
             placeholder={"Enter maximum dollar amount for winner"}
             handlechange={this.handleDollar}
