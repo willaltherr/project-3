@@ -1,4 +1,5 @@
 const Game = require("../models/Games");
+const Users = require("../models/User");
 
 //define methods for the gameController
 
@@ -33,6 +34,12 @@ module.exports = {
     Game
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  getUsers: function(req, res) {
+    Users
+      .find({}, 'name -_id')
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }

@@ -13,6 +13,10 @@ export default {
   deleteGame: function(id) {
     return axios.delete("/api/games/" + id);
   },
+  // Gets all users
+  getUsers: function() {
+    return axios.get("/api/games/users/");
+  },
   // Saves a book to the database
   saveGame: function(gameData) {
     return axios.post("/api/games/", gameData);
