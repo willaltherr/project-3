@@ -21,6 +21,7 @@ import Steps from "./components/layout/Steps";
 
 import "./App.css";
 import Axios from "axios";
+import joingame from "./components/joingame/joingame";
 
 
 
@@ -56,6 +57,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/profile" component={Profile} />
+              <PrivateRoute exact path="/gamelist/:id" component={joingame} />
             </Switch>
             <Footer />
           </div>

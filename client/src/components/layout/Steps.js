@@ -3,7 +3,7 @@ import "./Steps.css";
 
 function Steps({ children }) {
   return (
-    <div className="steps" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: 20 }}>
+    <div className="steps" id="steps"style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: 20 }}>
           <div>
                 <p>
                     <img className="step1" src="/images/step1.jpg"/>

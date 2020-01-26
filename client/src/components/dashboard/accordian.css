@@ -18,10 +18,12 @@
     align-content: left;
 }
 
+
 .joinBtn{
-    height:25px;
+    height:35px;
     width: 95px;
     float: right;
+    font-family: monospace;
 }
 
 .join{
