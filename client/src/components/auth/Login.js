@@ -95,7 +95,7 @@ class Login extends Component {
                   {errors.emailnotfound}
                 </span>
               </div>
-              <div className="input-field col s12" style={{}}>
+              <div className="input-field col s12" style={{color:"white"}}>
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
