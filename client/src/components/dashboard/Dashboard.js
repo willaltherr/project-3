@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { logoutUser } from "../../actions/authActions";
 import FormContainer from "../containers/FormContainer";
+import { Row } from "../containers/FluidContainer"
+
 import "./dashboard.css";
 import AccordionButton from "./accordian";
 
@@ -29,7 +32,8 @@ class Dashboard extends Component {
             <div>
               <AccordionButton />
             </div>
-
+      <div className="buttonsRow">    
+      
             <button
               style={{
                 width: "150px",
@@ -37,13 +41,33 @@ class Dashboard extends Component {
                 letterSpacing: "1.5px",
                 marginTop: "1rem",
                 fontFamily: "monospace",
+                fontSize:"16px"
+                // marginRight:"50px"
               }}
               onClick={this.onLogoutClick}
-              className="waves-effect waves-light hoverable logout"
+              className="logout"
             >
-              Logout
+              LOGOUT
             </button>
-            <br></br><br></br><br></br><br></br>
+          
+            <Link to="/profile">
+            
+            <button className=""
+              style={{
+              width: "150px",
+              borderRadius: "3px",
+              letterSpacing: "1.5px",
+              marginTop: "1rem",
+              fontFamily: "monospace",
+              fontSize:"15px"
+              // marginLeft:"180px"
+            }}
+             >VIEW PROFILE</button> 
+
+            </Link>
+         
+         </div>
+            {/* <br></br><br></br><br></br><br></br> */}
         </div>
       </div>
       </div>

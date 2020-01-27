@@ -12,3 +12,13 @@
 .logout{
     font-family: monospace;
 }
+
+.buttonsRow {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    background-color: violet;
+    float: center;
+}
+
+
