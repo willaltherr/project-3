@@ -13,4 +13,11 @@
     font-family: monospace;
 }
 
+.buttonsRow {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    float: center;
+}
+
 

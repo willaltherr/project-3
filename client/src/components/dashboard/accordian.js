@@ -55,7 +55,8 @@ class AccordionButton extends Component {
         </Card>
         <Card>
           <Card.Header>
-            <Accordion.Toggle as={Button} variant="link" eventKey="1">
+            <Accordion.Toggle as={Button} variant="link" eventKey="1"
+            style={{fontFamily: "monospace"}}>
               Join a Group
             </Accordion.Toggle>
           </Card.Header>

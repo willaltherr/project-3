@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Line, Bar, Pie } from "react-chartjs-2";
 
+
 class Graph extends Component {
     constructor(props) {
         super(props);
@@ -11,8 +12,9 @@ class Graph extends Component {
                 datasets: [
                     {
                        label: "Winnings (USD)",
-                       backgroundColor: "rgba(255, 215, 0, 0.75)",
-                        data: [60, -50, 75, 140, 150, -90, 220]
+                       backgroundColor: "rgba(251, 185, 44, 0.75)",
+                        data: [60, -50, 75, 140, 150, -90, 220],
+                        
                     }
                     // {
                     //     label: "Months",
@@ -33,9 +35,22 @@ class Graph extends Component {
                     options={{
                         responsive:true,
                         legend: {
-                            position: "bottom",
-                            fontColor: 'rgb(255, 99, 132)'
+                            position: "bottom"
+                        },
+                        scales: {
+                            xAxes: [{
+                                gridLines: {
+                                    color: "rgba(255, 255, 255, 0.4)",
+                                }
+                            }],
+                            yAxes: [{
+                                gridLines: {
+                                    color: "rgba(255, 255, 255, 0.4)",
+                                }   
+                            }]
                         }
+            
+                        
                     }}
                     data={this.state.data}
                 />

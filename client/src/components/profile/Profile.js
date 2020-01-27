@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import axios from "axios";
 import PropTypes from "prop-types";
 import Graph from "../graph/graph";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { Col, Row, Container } from "../containers/FluidContainer"
@@ -15,6 +16,8 @@ class Profile extends Component {
     e.preventDefault();
     this.props.logoutUser();
   };
+
+ 
 
   //START OF IMAGE UPLOADER FUNCTIONS / STATE
   constructor(props) {
@@ -66,7 +69,7 @@ class Profile extends Component {
           <Col size="md-6">
       <div style={{ height: "75vh" }} className="container valign-wrapper2">
           <div className="landing-copy">
-            <div className="blankfornow">
+            <div className="blankfornow" style={{}}>
             <h2>
               Welcome back, {user.name.split(" ")[0]}!
             </h2>
@@ -74,8 +77,9 @@ class Profile extends Component {
               <img href="/"></img>
             </div> */}
             <br></br>
-            <div style={{ height: "20vh" }} className="profilePhotoDiv">
-                <img src="https://mhcd.org/wp-content/uploads/2017/12/placeholder-man-1024x1024.png" alt="profilePicture">
+            <div className="newtag">
+                <img src="/images/uploads/Selfie.jpg" alt="profilePicture" className="me"
+                >
                 </img>
             </div>
             <br></br><br></br><br></br>
@@ -109,7 +113,7 @@ class Profile extends Component {
                 <h2> 
                     Total Monthly Earnings for {user.name.split(" ")[0]}
                     </h2>
-                <Graph/>
+                <Graph />
 
               
              </div>
@@ -121,6 +125,8 @@ class Profile extends Component {
           <div style={{}} className="LogoutDiv">
             <button
               style={{
+                fontFamily: "monospace",
+                fontSize:"10px",
                 width: "150px",
                 borderRadius: "3px",
                 letterSpacing: "2.5px",
@@ -129,8 +135,27 @@ class Profile extends Component {
               onClick={this.onLogoutClick}
               className="btn logout btn-large gold"
             >
+              <strong>
               Logout
+              </strong>
             </button>
+            <Link to="/dashboard">
+            <button
+              style={{
+                fontFamily: "monospace",
+                fontSize:"10px",
+                width: "150px",
+                borderRadius: "3px",
+                letterSpacing: "2.5px",
+                marginTop: "1rem"
+              }}
+              className="btn logout btn-large gold"
+            >
+              <strong>
+              Dashboard
+              </strong>
+            </button>
+            </Link>
           </div>
     </Container>
     );

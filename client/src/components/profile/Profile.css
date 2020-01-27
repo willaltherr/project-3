@@ -1,16 +1,32 @@
 .container.valign-wrapper2 {
     border: 2px;
+    color: white;
     border-style: solid;
     border-color: black;
-    margin-top: 10px;
+    background-color: #151D2E;
+    opacity: 0.9;
+    margin-top: 50px;
+    align-content: center;
     text-align: center;
     padding-top: 45px;
     font-family: 'Vidaloka', serif;
-
+    z-index: -10;
 }
+
 Container {
 
 }
+
+.me {
+    height: 200px;
+    width: 200px;
+    border: black;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 5px;
+    z-index: 9999;    
+}
+
 .wholeProfileDiv {
 
 }
@@ -18,8 +34,11 @@ Container {
 .profileGraph {
     border: 2px;
     border-style: solid;
-    border-color: gold;
-    margin-top: 10px;
+    border-color: black;
+    background-color: #151D2E;
+    opacity: 0.9;
+    color: white;
+    margin-top: 50px;
     text-align: center;
     padding-top: 45px;
     font-family: 'Vidaloka', serif;
@@ -41,6 +60,7 @@ Container {
 .LogoutDiv {
   align-content: center;
   text-align: center;
+  size: 15px;
   padding-bottom: 100px;
 }
 

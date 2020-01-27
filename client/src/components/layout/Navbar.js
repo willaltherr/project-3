@@ -15,10 +15,10 @@ class Navbar2 extends Component {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
             <button className="btn-sm">
-            <Nav.Link style={{ fontFamily: "monospace", color:"#151D2E", fontSize:"110%"}} eventKey="1" as={Link} to="/login">LOGIN HERE</Nav.Link>
+            <Nav.Link style={{alignContent:"center" ,fontFamily: "monospace", color:"#151D2E", fontSize:"12px", borderRadius: "2px"}} eventKey="1" as={Link} to="/login">LOGIN HERE</Nav.Link>
             </button>
             <button className="btn-sm">
-            <Nav.Link style={{ fontFamily: "monospace", color:"#151D2E"}} eventKey="2" as={Link} to="/register">REGISTER HERE</Nav.Link>
+            <Nav.Link style={{alignContent:"center" ,fontFamily: "monospace", color:"#151D2E", fontSize: "12px", borderRadius: "2px"}} eventKey="2" as={Link} to="/register">REGISTER HERE</Nav.Link>
             </button>
           </Nav>
         </Navbar.Collapse>
