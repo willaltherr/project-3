@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Jumbotron({ children }) {
   return (
-    <div className="jumbotron" style={{ display: "grid", gridTemplateColumns: "20% 60% 20%", gridGap: 20 }}>
+    <div className="jumbotron jumbotron-fluid col s12" style={{ display: "grid", gridTemplateColumns: "20% 60% 20%", gridGap:0 }}>
 
         <div className="slogan" >
         </div>

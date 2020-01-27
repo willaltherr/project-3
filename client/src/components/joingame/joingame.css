@@ -1,0 +1,31 @@
+.joinPage {
+    background-color: #151D2E;
+    color: white;
+    opacity: .9;  
+    font-size: 125px;
+    padding-bottom: 25px;
+    padding-top: 5px;
+    /* margin: 50px; */
+}
+
+.bigdiv {
+    padding: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+.chosen {
+    font-size: 55px;
+}
+
+.timer {
+    font-size: 55px;
+}
+
+.winnerDiv {
+    color:#FBB92C;
+    opacity: 0.9;
+    z-index: 10;
+    
+}
+

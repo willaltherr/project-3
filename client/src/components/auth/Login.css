@@ -4,3 +4,8 @@
    background-size: cover;
     height: 100vh;
 }
+
+#password,
+#email {
+    color:white;
+}
