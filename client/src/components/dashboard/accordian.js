@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import { Accordion, Card, Button } from 'react-bootstrap';
 import FormContainer from "../containers/FormContainer"
 import "./accordian.css"
-
+import moment from "moment";
 
 class AccordionButton extends Component {
   state = {
@@ -74,6 +74,7 @@ class AccordionButton extends Component {
                       {game.name}
                       <td>${game.dollar}</td>
                       <td>${game.cost}</td>
+                      <td>{moment(game.time).format('ll')}</td>
                       <td><a href={`/gamelist/${game._id}`}><button className="joinBtn">Join</button></a></td>
                     </tr>
                   )) }
