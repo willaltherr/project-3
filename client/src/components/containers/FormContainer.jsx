@@ -252,7 +252,7 @@ class FormContainer extends Component {
     return (
       <>
         <form className="container-fluid" onSubmit={this.handleFormSubmit}>
-          <Input
+          <Input style={{color:"black"}}
             inputtype={"text"}
             title={"Group Name"}
             name={"name"}
